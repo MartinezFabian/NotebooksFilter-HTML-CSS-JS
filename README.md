@@ -1,4 +1,4 @@
-#Notebooks Filter
+# Notebooks Filter
 
 This project aims to practice the implementation of a filtered search using JavaScript. The goal is to create an interactive web application that allows users to filter a list of notebooks according to different criteria, such as price, brand, processor, screen size, screen resolution and RAM.
 
