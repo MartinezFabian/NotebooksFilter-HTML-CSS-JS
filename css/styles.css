@@ -31,3 +31,37 @@ body {
 [class$="__heading"] {
   margin: 2rem 0;
 }
+
+/* header */
+.header__container {
+  margin-top: 4rem;
+}
+
+@media (min-width: 468px) {
+  .header__container {
+    margin-top: 8rem;
+  }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 468px) {
+  .search {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.search__label {
+  display: block;
+  font-weight: 600;
+}
+
+.search__select {
+  padding: 1rem 2rem;
+  width: 100%;
+}
