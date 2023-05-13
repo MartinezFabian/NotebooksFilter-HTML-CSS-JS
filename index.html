@@ -14,5 +14,119 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="header__container">
+      <form id="search">
+        <div class="search__filter">
+          <label for="select-brand" class="search__label">Marca</label>
+          <select class="search__select" id="select-brand">
+            <option value="">Seleccione</option>
+            <option value="Dell">Dell</option>
+            <option value="HP">HP</option>
+            <option value="Lenovo">Lenovo</option>
+            <option value="Apple">Apple</option>
+            <option value="Asus">Asus</option>
+            <option value="Acer">Acer</option>
+          </select>
+        </div>
+
+        <div class="search__filter">
+          <label for="select-min-price" class="search__label">Precio Min</label>
+          <select class="search__select" id="select-min-price">
+            <option value="">Seleccione</option>
+            <option value="799">700</option>
+            <option value="800">800</option>
+            <option value="900">900</option>
+            <option value="1000">1000</option>
+            <option value="1100">1100</option>
+            <option value="1200">1200</option>
+            <option value="1200">1300</option>
+            <option value="1200">1400</option>
+            <option value="1499">1499</option>
+          </select>
+        </div>
+
+        <div class="search__filter">
+          <label for="select-max-price" class="search__label">Precio Max</label>
+          <select class="search__select" id="select-max-price">
+            <option value="">Seleccione</option>
+            <option value="799">700</option>
+            <option value="800">800</option>
+            <option value="900">900</option>
+            <option value="1000">1000</option>
+            <option value="1100">1100</option>
+            <option value="1200">1200</option>
+            <option value="1200">1300</option>
+            <option value="1200">1400</option>
+            <option value="1499">1499</option>
+          </select>
+        </div>
+
+        <div class="search__filter">
+          <label for="select-processor" class="search__label">Procesador</label>
+          <select class="search__select" id="select-processor">
+            <option value="">Seleccione</option>
+            <option value="Intel Core i5">Intel Core i5</option>
+            <option value="AMD Ryzen 5">AMD Ryzen 5</option>
+            <option value="Intel Core i7">Intel Core i7</option>
+            <option value="AMD Ryzen 7">AMD Ryzen 7</option>
+            <option value="Apple M1">Apple M1</option>
+          </select>
+        </div>
+
+        <div class="search__filter">
+          <label for="select-screen-size" class="search__label"
+            >Tamaño Pantalla</label
+          >
+          <select class="search__select" id="select-screen-size">
+            <option value="">Seleccione</option>
+            <option value="13.3">13.3'</option>
+            <option value="14">14'</option>
+            <option value="15.6">15.6'</option>
+            <option value="17.3">17.3'</option>
+          </select>
+        </div>
+
+        <div class="search__filter">
+          <label for="select-screen-resolution" class="search__label"
+            >Resolución de Pantalla</label
+          >
+          <select class="search__select" id="select-screen-resolution">
+            <option value="">Seleccione</option>
+            <option value="1920x1080">1920x1080</option>
+            <option value="2560x1440">2560x1440</option>
+            <option value="2560x1600">2560x1600</option>
+            <option value="3840x2160">3840x2160</option>
+          </select>
+        </div>
+
+        <div class="search__filter">
+          <label for="select-ram" class="search__label">RAM</label>
+          <select class="search__select" id="select-ram">
+            <option value="">Seleccione</option>
+            <option value="8GB">8GB</option>
+            <option value="16GB">16GB</option>
+            <option value="32GB">32GB</option>
+          </select>
+        </div>
+      </form>
+    </header>
+
+    <main id="results" class="results__container">
+      <h1 class="results__heading">Resultados</h1>
+
+      <div class="notebook">
+        <h3 class="notebook__name">Dell Intel Core i5 16GB</h3>
+        <p class="notebook__brand">Marca: Dell</p>
+        <p class="notebook__processor">Procesador: Intel Core i5</p>
+        <p class="notebool__screen-resolution">Resolución: 1920x1080</p>
+        <p class="notebook__ram">RAM: 16GB</p>
+        <p class="notebook__price">Precio: 999 US$</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">Todos los derechos reservados ©</p>
+    </footer>
+  </body>
 </html>
