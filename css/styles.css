@@ -65,3 +65,39 @@ body {
   padding: 1rem 2rem;
   width: 100%;
 }
+
+/* main section */
+.results {
+  margin-top: 5rem;
+}
+
+.results__heading {
+  font-size: 4rem;
+  text-align: center;
+}
+
+@media (min-width: 468px) {
+  .results {
+    margin-top: 8rem;
+  }
+
+  .results__heading {
+    text-align: left;
+  }
+}
+
+@media (min-width: 468px) {
+  .results__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 28rem);
+    gap: 2rem;
+  }
+}
+
+.notebook {
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin-bottom: 3rem;
+}
