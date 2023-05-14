@@ -100,4 +100,22 @@ body {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   margin-bottom: 3rem;
+  transition: transform 0.5s ease;
+}
+
+.notebook:hover {
+  transform: scale(1.05);
+}
+
+/* footer */
+.footer {
+  margin-top: 20rem;
+  width: 100%;
+  border-top: solid 1px var(--light-gray);
+  padding: 2rem;
+}
+
+.footer__copyright {
+  text-align: center;
+  font-weight: 600;
 }
