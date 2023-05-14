@@ -4,9 +4,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function main() {
   //Variables
+  const selectBrand = document.querySelector("#select-brand");
+  const selectMinPrice = document.querySelector("#select-min-price");
+  const selectMaxPrice = document.querySelector("#select-max-price");
+  const selectProcessor = document.querySelector("#select-processor");
+  const selectScreenSize = document.querySelector("#select-screen-size");
+  const selectScreenResolution = document.querySelector("#select-screen-resolution");
+  const selectRam = document.querySelector("#select-ram");
+
   const resultsGrid = document.querySelector("#results");
 
+  const filterData = {
+    brand: "",
+    processor: "",
+    screenSize: "",
+    screenResolution: "",
+    RAM: "",
+    minPrice: "",
+    maxPrice: "",
+  };
+
   //Functions
+  registerEventListeners();
+
+  function registerEventListeners() {
+    // Escucha los cambios en el elemento selectBrand
+    selectBrand.addEventListener("change", (e) => {
+      // Actualiza la propiedad "brand" del objeto "filterData" con el valor seleccionado por el usuario
+      filterData.brand = e.target.value;
+    });
+
+    selectMinPrice.addEventListener("change", (e) => {
+      filterData.minPrice = e.target.value;
+    });
+
+    selectMaxPrice.addEventListener("change", (e) => {
+      filterData.maxPrice = e.target.value;
+    });
+
+    selectProcessor.addEventListener("change", (e) => {
+      filterData.processor = e.target.value;
+    });
+
+    selectScreenSize.addEventListener("change", (e) => {
+      filterData.screenSize = e.target.value;
+    });
+
+    selectScreenResolution.addEventListener("change", (e) => {
+      filterData.screenResolution = e.target.value;
+    });
+
+    selectRam.addEventListener("change", (e) => {
+      filterData.RAM = e.target.value;
+    });
+  }
+
   showNotebooks();
 
   function showNotebooks() {
