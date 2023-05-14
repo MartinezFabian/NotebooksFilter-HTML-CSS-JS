@@ -32,6 +32,7 @@ function main() {
     selectBrand.addEventListener("change", (e) => {
       // Actualiza la propiedad "brand" del objeto "filterData" con el valor seleccionado por el usuario
       filterData.brand = e.target.value;
+      filterNotebooks();
     });
 
     selectMinPrice.addEventListener("change", (e) => {
@@ -78,5 +79,18 @@ function main() {
         </div>`
       );
     });
+  }
+
+  function filterNotebooks() {
+    const result = notebooks.filter(filterByBrand);
+    console.log(result);
+  }
+
+  function filterByBrand(notebook) {
+    if (filterData.brand !== "") {
+      return notebook.brand === filterData.brand;
+    }
+
+    return notebook;
   }
 }
