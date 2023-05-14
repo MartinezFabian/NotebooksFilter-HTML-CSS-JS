@@ -1,6 +1,7 @@
 /* variables */
 :root {
   --light-gray: #e1e1e1;
+  --white: #fff;
   --main-font: "Montserrat", sans-serif;
 }
 
@@ -64,6 +65,8 @@ body {
 .search__select {
   padding: 1rem 2rem;
   width: 100%;
+  border-radius: 0.9rem;
+  background-color: var(--white);
 }
 
 /* main section */
@@ -97,14 +100,18 @@ body {
 .notebook {
   border-radius: 1rem;
   padding: 1rem 3rem;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   margin-bottom: 3rem;
   transition: transform 0.5s ease;
 }
 
 .notebook:hover {
   transform: scale(1.05);
+}
+
+.notebook__price {
+  font-weight: 600;
+  font-size: 1.8rem;
 }
 
 /* footer */
