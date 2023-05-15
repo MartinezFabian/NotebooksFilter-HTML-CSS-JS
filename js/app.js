@@ -57,6 +57,7 @@ function main() {
 
     selectScreenResolution.addEventListener("change", (e) => {
       filterData.screenResolution = e.target.value;
+      filterNotebooks();
     });
 
     selectRam.addEventListener("change", (e) => {
@@ -91,7 +92,8 @@ function main() {
       .filter(filterByMinPrice)
       .filter(filterByMaxPrice)
       .filter(filterByProcessor)
-      .filter(filterByScreenSize);
+      .filter(filterByScreenSize)
+      .filter(filterByScreenResolution);
     console.log(result);
   }
 
@@ -130,6 +132,14 @@ function main() {
   function filterByScreenSize(notebook) {
     if (filterData.screenSize !== "") {
       return notebook.screenSize === filterData.screenSize;
+    }
+
+    return notebook;
+  }
+
+  function filterByScreenResolution(notebook) {
+    if (filterData.screenResolution !== "") {
+      return notebook.screenResolution === filterData.screenResolution;
     }
 
     return notebook;
