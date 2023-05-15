@@ -47,6 +47,7 @@ function main() {
 
     selectProcessor.addEventListener("change", (e) => {
       filterData.processor = e.target.value;
+      filterNotebooks();
     });
 
     selectScreenSize.addEventListener("change", (e) => {
@@ -87,7 +88,8 @@ function main() {
     const result = notebooks
       .filter(filterByBrand)
       .filter(filterByMinPrice)
-      .filter(filterByMaxPrice);
+      .filter(filterByMaxPrice)
+      .filter(filterByProcessor);
     console.log(result);
   }
 
@@ -110,6 +112,14 @@ function main() {
   function filterByMaxPrice(notebook) {
     if (filterData.maxPrice !== "") {
       return notebook.price <= filterData.maxPrice;
+    }
+
+    return notebook;
+  }
+
+  function filterByProcessor(notebook) {
+    if (filterData.processor !== "") {
+      return notebook.processor === filterData.processor;
     }
 
     return notebook;
