@@ -42,6 +42,7 @@ function main() {
 
     selectMaxPrice.addEventListener("change", (e) => {
       filterData.maxPrice = e.target.value;
+      filterNotebooks();
     });
 
     selectProcessor.addEventListener("change", (e) => {
@@ -83,7 +84,10 @@ function main() {
   }
 
   function filterNotebooks() {
-    const result = notebooks.filter(filterByBrand).filter(filterByMinPrice);
+    const result = notebooks
+      .filter(filterByBrand)
+      .filter(filterByMinPrice)
+      .filter(filterByMaxPrice);
     console.log(result);
   }
 
@@ -98,6 +102,14 @@ function main() {
   function filterByMinPrice(notebook) {
     if (filterData.minPrice !== "") {
       return notebook.price >= filterData.minPrice;
+    }
+
+    return notebook;
+  }
+
+  function filterByMaxPrice(notebook) {
+    if (filterData.maxPrice !== "") {
+      return notebook.price <= filterData.maxPrice;
     }
 
     return notebook;
