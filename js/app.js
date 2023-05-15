@@ -62,6 +62,7 @@ function main() {
 
     selectRam.addEventListener("change", (e) => {
       filterData.RAM = e.target.value;
+      filterNotebooks();
     });
   }
 
@@ -93,7 +94,8 @@ function main() {
       .filter(filterByMaxPrice)
       .filter(filterByProcessor)
       .filter(filterByScreenSize)
-      .filter(filterByScreenResolution);
+      .filter(filterByScreenResolution)
+      .filter(filterByRAM);
     console.log(result);
   }
 
@@ -140,6 +142,14 @@ function main() {
   function filterByScreenResolution(notebook) {
     if (filterData.screenResolution !== "") {
       return notebook.screenResolution === filterData.screenResolution;
+    }
+
+    return notebook;
+  }
+
+  function filterByRAM(notebook) {
+    if (filterData.RAM !== "") {
+      return notebook.RAM === filterData.RAM;
     }
 
     return notebook;
