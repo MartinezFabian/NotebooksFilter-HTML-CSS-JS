@@ -51,7 +51,8 @@ function main() {
     });
 
     selectScreenSize.addEventListener("change", (e) => {
-      filterData.screenSize = e.target.value;
+      filterData.screenSize = Number(e.target.value);
+      filterNotebooks();
     });
 
     selectScreenResolution.addEventListener("change", (e) => {
@@ -89,7 +90,8 @@ function main() {
       .filter(filterByBrand)
       .filter(filterByMinPrice)
       .filter(filterByMaxPrice)
-      .filter(filterByProcessor);
+      .filter(filterByProcessor)
+      .filter(filterByScreenSize);
     console.log(result);
   }
 
@@ -120,6 +122,14 @@ function main() {
   function filterByProcessor(notebook) {
     if (filterData.processor !== "") {
       return notebook.processor === filterData.processor;
+    }
+
+    return notebook;
+  }
+
+  function filterByScreenSize(notebook) {
+    if (filterData.screenSize !== "") {
+      return notebook.screenSize === filterData.screenSize;
     }
 
     return notebook;
