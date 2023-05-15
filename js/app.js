@@ -66,9 +66,11 @@ function main() {
     });
   }
 
-  showNotebooks();
+  showNotebooks(notebooks);
 
-  function showNotebooks() {
+  function showNotebooks(notebooks) {
+    clearHTML(); //eliminamos el HTML previo
+
     notebooks.forEach((notebook) => {
       const { brand, processor, screenSize, screenResolution, RAM, price } = notebook;
 
@@ -87,8 +89,17 @@ function main() {
     });
   }
 
+  //eliminar todos los elementos hijos del contenedor resultsGrid
+  function clearHTML() {
+    // Mientras exista un primer hijo en el contenedor resultsGrid
+    while (resultsGrid.firstChild) {
+      // Remover el primer hijo del contenedor resultsGrid
+      resultsGrid.removeChild(resultsGrid.firstChild);
+    }
+  }
+
   function filterNotebooks() {
-    const result = notebooks
+    const filteredNotebooks = notebooks
       .filter(filterByBrand)
       .filter(filterByMinPrice)
       .filter(filterByMaxPrice)
@@ -96,7 +107,8 @@ function main() {
       .filter(filterByScreenSize)
       .filter(filterByScreenResolution)
       .filter(filterByRAM);
-    console.log(result);
+
+    showNotebooks(filteredNotebooks);
   }
 
   function filterByBrand(notebook) {
