@@ -114,6 +114,12 @@ body {
   font-size: 1.8rem;
 }
 
+.no-results-main-text {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
 /* footer */
 .footer {
   margin-top: 20rem;

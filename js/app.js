@@ -108,7 +108,11 @@ function main() {
       .filter(filterByScreenResolution)
       .filter(filterByRAM);
 
-    showNotebooks(filteredNotebooks);
+    if (filteredNotebooks.length > 0) {
+      showNotebooks(filteredNotebooks);
+    } else {
+      noResults();
+    }
   }
 
   function filterByBrand(notebook) {
@@ -165,5 +169,22 @@ function main() {
     }
 
     return notebook;
+  }
+
+  function noResults() {
+    clearHTML();
+    const noResultsMessage = document.createElement("DIV");
+
+    const mainText = document.createElement("P");
+    mainText.textContent = "No hay notebooks que cumplan con los parámetros solicitados :c";
+    mainText.classList.add("no-results-main-text");
+
+    const secondaryText = document.createElement("P");
+    secondaryText.textContent = "¡Intenta con otros parámetros de búsqueda!";
+
+    noResultsMessage.appendChild(mainText);
+    noResultsMessage.appendChild(secondaryText);
+
+    resultsGrid.appendChild(noResultsMessage);
   }
 }
